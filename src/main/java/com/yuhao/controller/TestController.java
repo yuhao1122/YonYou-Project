@@ -17,7 +17,7 @@ public class TestController {
     @SysLog("测试")
     @GetMapping("/test")
     public String test(@RequestParam("name") String name) {
-        return name;
+        return "余浩" + name;
     }
 
 }

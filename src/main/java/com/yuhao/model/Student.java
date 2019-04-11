@@ -1,5 +1,6 @@
 package com.yuhao.model;
 
+import com.yuhao.aspect.anno.CodeEntityAnno;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

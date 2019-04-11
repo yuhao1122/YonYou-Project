@@ -49,10 +49,17 @@ public class SysLogAspect {
      */
     @Around("logPointCut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
+
         long beginTime = System.currentTimeMillis();
         Object result = point.proceed();
+
         long time = System.currentTimeMillis() - beginTime;
         try {
+            //返回的参数
+            Object result1 = point.proceed();
+            //请求的参数
+            Object[] args = point.getArgs();
+
             saveLog(point, time);
         } catch (Exception e) {
         }
