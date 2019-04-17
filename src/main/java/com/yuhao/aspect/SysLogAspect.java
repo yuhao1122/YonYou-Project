@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.aspectj.lang.reflect.SourceLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +27,7 @@ import java.util.List;
  */
 @Aspect  // 使用@Aspect注解声明一个切面
 @Component
-public class SysLogAspect {
+public class SysLogAspect<tes> {
 
     @Autowired
     private SysLogService sysLogService;
@@ -101,6 +102,27 @@ public class SysLogAspect {
 
         }
         sysLogService.save(sysLogBO);
+    }
+
+    class user {
+        private String name;
+        private String age;
+        private String like;
+
+        public String getLike() {
+            return like;
+        }
+
+        public void setLike(String like) {
+            this.like = like;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        String name = "yuhao";
+        System.out.println(name);
+
     }
 
 }
